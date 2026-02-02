@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<style>
+		body {
+			font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+			width: 320px;
+			margin: 12px;
+		}
+
+		.row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 10px;
+		}
+
+		.sub {
+			font-size: 12px;
+			opacity: .75;
+			margin-top: 6px;
+			word-break: break-word;
+		}
+
+		.divider {
+			height: 1px;
+			background: rgba(0, 0, 0, .08);
+			margin: 12px 0;
+		}
+
+		.switch {
+			position: relative;
+			display: inline-block;
+			width: 46px;
+			height: 26px;
+		}
+
+		.switch input {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		.slider {
+			position: absolute;
+			inset: 0;
+			border-radius: 999px;
+			background: #cfd3da;
+			transition: .15s ease;
+			cursor: pointer;
+		}
+
+		.slider:before {
+			content: "";
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			left: 3px;
+			top: 3px;
+			border-radius: 50%;
+			background: #fff;
+			transition: .15s ease;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+		}
+
+		input:checked + .slider {
+			background: #5A42FF;
+		}
+
+		input:checked + .slider:before {
+			transform: translateX(20px);
+		}
+
+		.hint {
+			font-size: 12px;
+			opacity: .75;
+			margin-top: 8px;
+		}
+
+		.disabled {
+			opacity: .5;
+			pointer-events: none;
+		}
+	</style>
+</head>
+<body>
+<div class="row">
+	<div>Туннелировать весь трафик</div>
+	<label class="switch">
+		<input id="allToggle" type="checkbox"/>
+		<span class="slider"></span>
+	</label>
+</div>
+<div id="allInfo" class="sub"></div>
+
+<div class="divider"></div>
+
+<div id="siteBlock">
+	<div class="row">
+		<div>VPN для текущего сайта</div>
+		<label class="switch">
+			<input id="siteToggle" type="checkbox"/>
+			<span class="slider"></span>
+		</label>
+	</div>
+	<div id="siteInfo" class="sub"></div>
+</div>
+
+<div id="hint" class="hint"></div>
+
+<script src="popup.js"></script>
+</body>
+</html>
