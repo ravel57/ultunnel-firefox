@@ -16,7 +16,10 @@
   },
   "browser_action": {
     "default_popup": "popup.html",
-    "default_title": "ULtunnel - browser-plugin"
+    "default_title": "ULtunnel - browser-plugin",
+    "default_icon": {
+      "512": "icons/icon-512.png"
+    }
   },
   "browser_specific_settings": {
     "gecko": {
