@@ -23,8 +23,11 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "ultunnel@uldesk.ru",
-      "strict_min_version": "91.0"
+      "id": "petyalom@yandex.ru",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   }
 }
